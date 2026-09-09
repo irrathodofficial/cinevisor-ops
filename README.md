@@ -1,11 +1,11 @@
 # 🎬 CineVisor-Ops: Autonomous Media Infrastructure Agent
 
 ![Grafana](https://img.shields.io/badge/Grafana-Cloud_MCP-F46800?style=for-the-badge&logo=grafana&logoColor=white)
-![Gemini AI](https://img.shields.io/badge/Google_Gemini-1.5_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Gemini AI](https://img.shields.io/badge/Google_Gemini-3.6_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-Flask-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active_Production-success?style=for-the-badge)
 
-**CineVisor-Ops** is an elite, AI-driven observability and automated incident remediation agent built specifically for the **Google Cloud Summer Blockbuster Hackathon (Grafana Track)**. 
+**CineVisor-Ops** is an elite, AI-driven observability and automated incident remediation agent built specifically for **Agentic Cinema: The Blockbuster Hackathon (Grafana Track)** hosted by Google Cloud. 
 
 Designed for the high-stakes Media & Entertainment (M&E) industry, CineVisor-Ops autonomously diagnoses critical live-broadcast failures (e.g., 4K stream dropouts, GPU VRAM exhaustion, SRT network jitter) by natively integrating with the **Grafana Cloud MCP (Model Context Protocol)**.
 
@@ -15,13 +15,13 @@ Designed for the high-stakes Media & Entertainment (M&E) industry, CineVisor-Ops
 This project strictly fulfills the core requirements of the Grafana track by implementing **Actual Runtime Integration** with the Grafana Cloud MCP server. 
 * **Interactive Auth:** It utilizes the official OAuth 2.1 browser flow to authenticate dynamically.
 * **Real Tool Execution:** It programmatically executes tools to fetch live telemetry (Prometheus metrics, Loki logs, Tempo traces, and IRM alerts) instead of relying solely on simulated prompt data.
-* **Actionable Intelligence:** Processes raw telemetry through Google Gemini 1.5 Flash to generate highly technical, Markdown-formatted incident reports and remediation steps.
+* **Actionable Intelligence:** Processes raw telemetry through Google Gemini 3.6 Flash to generate highly technical, Markdown-formatted incident reports and remediation steps.
 
 ---
 
 ## ✨ Enterprise-Grade Features
 
-* **🧠 Agentic RCA (Root-Cause Analysis):** Powered by `gemini-1.5-flash`, the agent correlates disparate logs, metrics, and traces to understand *why* a broadcast node failed.
+* **🧠 Agentic RCA (Root-Cause Analysis):** Powered by `gemini-3.6-flash`, the agent correlates disparate logs, metrics, and traces to understand *why* a broadcast node failed.
 * **🔌 Dynamic Grafana MCP Tool Calling:** Natively connects to `mcp.grafana.com` via the official Agent Development Kit (ADK) logic.
 * **🔐 Secure Browser Authorization:** Implements interactive browser-based authentication for secure, short-lived session tokens.
 * **📊 Markdown Telemetry Dashboard:** Parses raw LLM JSON/Text output into a beautiful, scannable, and highly professional technical incident report UI.
@@ -48,7 +48,7 @@ cinevisor-ops/
 ```
 
 **Data Flow:**  
-`User Interface` ──(POST)──► `Flask Backend` ──(Trigger)──► `Agent.py` ──(OAuth/HTTP)──► `Grafana Cloud MCP` ──(Context)──► `Gemini 1.5 Flash`
+`User Interface` ──(POST)──► `Flask Backend` ──(Trigger)──► `Agent.py` ──(OAuth/HTTP)──► `Grafana Cloud MCP` ──(Context)──► `Gemini 3.6 Flash`
 
 ---
 
@@ -93,7 +93,7 @@ python app.py
 ---
 
 ## 🎥 Hackathon Demo Video
-👉 **[Watch the 3-Minute Live Demo on YouTube](#)**  
+👉 **[Watch the 3-Minute Live Demo on YouTube](https://youtu.be/YOUR_VIDEO_ID_HERE)**  
 *(Watch how CineVisor-Ops authenticates with Grafana Cloud and resolves a 4K Stream Dropout in real-time).*
 
 ---
