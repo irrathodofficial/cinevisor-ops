@@ -93,7 +93,7 @@ python app.py
 ---
 
 ## 🎥 Hackathon Demo Video
-👉 **[Watch the 3-Minute Live Demo on YouTube]([https://youtu.be/YOUR_VIDEO_ID_HERE](https://youtu.be/y_sIrbwDftU))**  
+👉 **[Watch the 3-Minute Live Demo on YouTube](https://youtu.be/y_sIrbwDftU)**  
 *(Watch how CineVisor-Ops authenticates with Grafana Cloud and resolves a 4K Stream Dropout in real-time).*
 
 ---
