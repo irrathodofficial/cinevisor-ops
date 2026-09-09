@@ -5,6 +5,17 @@
     <title>CineVisor-Ops | Grafana MCP Track</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Added Markdown Parser for beautiful text formatting -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        /* CSS to make the output look like a Pro Enterprise Dashboard */
+        #ai-output h1, #ai-output h2, #ai-output h3 { color: #0dcaf0; font-size: 1.1rem; margin-top: 15px; font-weight: bold; }
+        #ai-output pre { background: #212529; padding: 10px; border-radius: 5px; border: 1px solid #495057; }
+        #ai-output code { color: #e83e8c; font-size: 0.9rem; }
+        #ai-output a { color: #0d6efd; text-decoration: underline; font-weight: bold; }
+        #ai-output ul { margin-bottom: 10px; }
+        #ai-output p { margin-bottom: 10px; }
+    </style>
 </head>
 <body class="bg-dark text-white">
     <div class="container mt-4">
@@ -53,14 +64,26 @@
                         <div id="loading" class="spinner-border spinner-border-sm text-light d-none" role="status"></div>
                     </div>
                     <div class="p-3 bg-dark rounded border border-light overflow-auto" style="height: 400px; font-family: monospace; font-size: 13px;">
+                        
                         {% if error %}
                             <span class="text-danger fw-bold">[Error] {{ error }}</span>
                         {% elif output %}
-                            <div class="text-success fw-bold mb-2">[Execution Successful - Runtime Verified]</div>
-                            <pre class="text-white m-0" style="white-space: pre-wrap; font-family: inherit;">{{ output }}</pre>
+                            <div class="text-success fw-bold mb-3 border-bottom border-secondary pb-2">[Execution Successful - Runtime Verified]</div>
+                            
+                            <!-- This div will hold the beautifully parsed Markdown -->
+                            <div id="ai-output" class="text-white m-0 font-sans-serif" style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6;"></div>
+                            
+                            <!-- Script to convert those '**' into real bold text automatically -->
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                    const rawOutput = {{ output | tojson }};
+                                    document.getElementById('ai-output').innerHTML = marked.parse(rawOutput);
+                                });
+                            </script>
                         {% else %}
                             <span class="text-muted">// System ready. Click the red button to dispatch agent...<br>// Connected to Grafana Cloud MCP endpoint: https://mcp.grafana.com/mcp</span>
                         {% endif %}
+
                     </div>
                 </div>
             </div>
